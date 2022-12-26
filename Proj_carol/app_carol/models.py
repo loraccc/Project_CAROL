@@ -25,5 +25,5 @@ class under_person(models.Model):
     user = models.ForeignKey(Person, on_delete=models.CASCADE)
 
     class Meta:
-        db_table = "VARIETY"
+        db_table ="VARIETY"
 
