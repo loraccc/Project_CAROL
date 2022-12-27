@@ -11,3 +11,9 @@ def variety_edit(request):
     
 def variety_create(request):
     return render(request,"variety/create.html")
+    
+    #PERSON
+def person_login(request):
+    return render(request,"person/login.html")
+def person_register(request):
+    return render(request,"person/register.html")
