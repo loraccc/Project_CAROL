@@ -1,11 +1,30 @@
 {% extends "layouts/base.html" %}
-
-    {% block title %}
-    VARIETY | CREATE
-    {% endblock %}
-
+{% block title %}
+VARIETY | CREATE
+{% endblock %}
 {% block body_content %}
 <div class="container">
-    <h1> VARIETY CREATE </h1>
+    <h1>Variety Create | INVENTORY</h1>
+    <hr>
+    <a href="{% url 'variety.index' %}" class="btn btn-primary mb-2">BACK</a>
+    {% if msg %}
+    <div class="alert alert-success" role="alert">
+        A simple success alert—check it out!
+        {{msg}}
+      </div>
+    {% endif %}
+    <div class="card">
+        <div class="card-header">
+            <h4>Variety Detail</h4>
+        </div>
+        <div class="card-body">
+            <form action="{% url 'variety.create' %}" method="POST">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+                <input type="submit" class="btn btn-primary" value="ADD ITEM">
+            </form>
+        </div>
+    </div>
 </div>
 {% endblock %}

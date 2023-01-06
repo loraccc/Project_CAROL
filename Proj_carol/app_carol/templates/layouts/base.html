@@ -12,8 +12,16 @@
         {% block title %}
         {% endblock %}
     </title>
-    {% block custom_css %}
-    {% endblock %}
+    {% load static %}
+    <html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    <h1>Welcome to my site!</h1>
+  </body>
+</html>
+
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -32,13 +40,13 @@
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
+                  Settings
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a class="dropdown-item" href="{% url 'variety.index' %}">Variety</li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="{% url 'person.logout' %}">Logout</a></li>
                 </ul>
               </li>
               <li class="nav-item">
